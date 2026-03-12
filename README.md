@@ -1,2 +1,148 @@
-# hipay-qa-test
-HiPay QA technical test – test strategy and E2E automation using CodeceptJS and Gherkin
+# 🧪 HiPay – QA Automation Test (CodeceptJS)
+
+## 📋 1. Objective
+
+This project demonstrates an automated test approach for the **HiPay Fraud Management contact form**:
+
+<https://hipay.com/en/our-solutions/fraud-management/#contact>
+
+The objective is to validate that a potential merchant can successfully contact HiPay through the website.
+
+The automated tests verify that a user can:
+
+- Access the contact form
+- Fill in the required fields
+- Submit the form successfully
+
+The tests are implemented using **CodeceptJS**, **Playwright**, and **BDD (Gherkin)**.
+
+Using Gherkin syntax ensures that test scenarios remain readable by both **technical and non-technical stakeholders** (QA, Product, Business).
+
+## 🧠 2. Testing Scope
+
+The contact form is embedded using **HubSpot**, meaning that the submission is handled by a third-party service.
+
+Therefore, the automated tests focus on validating:
+
+- User interaction with the form
+- Required field validation
+- Correct submission behavior
+
+Out of scope:
+
+- HubSpot backend processing
+- CRM lead creation
+
+## 3. Installation & Setup
+
+### Requirements
+
+- Node.js ≥ 18
+- npm ≥ 9
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Install Playwright browsers
+
+```bash
+npx playwright install chromium
+```
+
+## 4. Run tests
+
+Test execution with detailed execution steps and report:
+
+```bash
+npm test
+```
+
+The HTML report is generated in:
+
+```bash
+output/index.html
+```
+## 4. Project Structure
+
+```bash
+hipay-qa-test
+│
+├─ tests
+│   ├─ contact.feature        # BDD test scenarios
+│   └─ contactSteps.js        # Step definitions
+│
+├─ pages
+│   └─ contactPage.js         # Page Object Model
+│
+├─ data
+│   └─ jeanMartin.json       # Test dataset
+│
+├─ output                     # Test reports
+│
+├─ codecept.conf.js           # CodeceptJS configuration
+├─ package.json               # Dependencies & scripts
+├─ QA Analyst FrontEnd - Test technique HiPay.md # Dependencies & scripts
+└─ README.md
+```
+
+## 5. Tests
+
+### Scenarios
+
+file : contact.feature
+
+#### Scenario 1: Successful contact form submission
+
+> Steps:
+>
+> - Open the HiPay fraud management contact form
+> - Fill in required fields with valid data
+> - Submit the form
+> - Verify that the submission is successful
+
+#### Scenario 2: Validation errors on submission
+
+Steps:
+>
+> - Open the HiPay fraud management contact form
+> - Validate specific fields with valid and invalid data
+
+### Test data
+
+Test data is stored in:
+
+```bash
+data/contactData.json
+```
+
+Example dataset:
+
+```bash
+{
+  "lastName": "Martin",
+  "firstName": "Jean",
+  "email": "Martin.Jean@gmail.com",
+  "phone": "+33612345678",
+  "website": "https://www.linkedin.com/in/martinjean12/",
+  "revenue": "Less than 500 000€",
+  "businessModel": "Online",
+  "message": "QA automation test message"
+}
+```
+
+The dataset uses realistic data to ensure stable form submission but add an id to easily track test execution and analysis on failure.
+
+### Test structure
+
+The automation follows the Page Object Model (POM) pattern.
+
+Benefits:
+
+- Clear separation between test logic and page interactions
+- Easier maintenance if the UI changes
+- Reusable actions across scenarios
+
+## 6. My QA approach (TODO)
