@@ -145,5 +145,19 @@ Benefits:
 - Easier maintenance if the UI changes
 - Reusable actions across scenarios
 
+## Test execution strategy
+
+The test suite uses scenario tags to support targeted execution:
+
+- `@smoke` critical user flows
+- `@validation` form validation scenarios
+
+Examples:
+
+```bash
+npm run test:smoke  
+npm run test:validation
+```
+
 ## 6. My QA approach (TODO)
 Test git push laptop

@@ -1,5 +1,6 @@
 Feature: HiPay contact form
 
+  @smoke 
   Scenario: Successful form submission
     Given I open the HiPay fraud management contact page
     Then I should see the contact form "About you"
@@ -8,6 +9,7 @@ Feature: HiPay contact form
     And I submit the form
     Then the form should be submitted successfully
 
+  @validation
   Scenario: Form validation
     Given I open the HiPay fraud management contact page
     Then I should see the contact form "About you"

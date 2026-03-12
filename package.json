@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "codeceptjs run --steps",
-    "test:allure": "codeceptjs run --steps && allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "test:smoke": "codeceptjs run --grep @smoke --steps",
+    "test:validation": "codeceptjs run --grep @validation --steps",
     "test:debug": "codeceptjs run --debug",
-    "test:feature": "codeceptjs run tests/contact.feature"
+    "test:feature": "codeceptjs run tests/contact.feature",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -23,9 +25,12 @@
   "homepage": "https://github.com/ALC244/hipay-qa-test#readme",
   "devDependencies": {
     "@cucumber/cucumber": "^12.7.0",
+    "@eslint/js": "^10.0.1",
     "allure-codeceptjs": "^3.6.0",
     "allure-commandline": "^2.37.0",
     "codeceptjs": "^3.7.6",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
     "playwright": "^1.58.2"
   }
 }
