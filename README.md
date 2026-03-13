@@ -54,7 +54,7 @@ npx playwright install chromium
 
 ## 4. Run tests
 
-Test execution with detailed execution steps and report:
+Run the full test suite with detailed execution steps and report:
 
 ```bash
 npm test
@@ -65,7 +65,7 @@ The HTML report is generated in:
 ```bash
 output/index.html
 ```
-## 4. Project Structure
+## 5. Project Structure
 
 ```bash
 hipay-qa-test
@@ -84,11 +84,11 @@ hipay-qa-test
 │
 ├─ codecept.conf.js           # CodeceptJS configuration
 ├─ package.json               # Dependencies & scripts
-├─ QA Analyst FrontEnd - Test technique HiPay.md # Dependencies & scripts
+├─ QA Analyst FrontEnd - Test technique HiPay.md  # Original exercise description
 └─ README.md
 ```
 
-## 5. Tests
+## 6. Tests
 
 ### Scenarios
 
@@ -115,7 +115,7 @@ Steps:
 Test data is stored in:
 
 ```bash
-data/contactData.json
+data/jeanMartin.json
 ```
 
 Example dataset:
@@ -133,7 +133,8 @@ Example dataset:
 }
 ```
 
-The dataset uses realistic data to ensure stable form submission but add an id to easily track test execution and analysis on failure.
+The dataset uses realistic data to ensure stable form submission.
+A unique identifier is added for some fields to help track test executions if needed.
 
 ### Test structure
 
@@ -145,7 +146,7 @@ Benefits:
 - Easier maintenance if the UI changes
 - Reusable actions across scenarios
 
-## Test execution strategy
+### Test execution strategy
 
 The test suite uses scenario tags to support targeted execution:
 
@@ -158,6 +159,3 @@ Examples:
 npm run test:smoke  
 npm run test:validation
 ```
-
-## 6. My QA approach (TODO)
-Test git push laptop
